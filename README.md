@@ -1,0 +1,1 @@
+Inspired by http://raidcomp.mmo-champion.com/ but for 3.3.5.

@@ -1,0 +1,202 @@
+// raid composition for 3.3.5
+// inspired by http://raidcomp.mmo-champion.com/
+// written by Murlorc
+// version 0.02
+
+//////////////////
+// mixins and shit
+//////////////////
+
+// clearfix taken from
+// http://www.m6tt.com/2011/09/22/a-less-approach-to-clearfix
+.clearfix() {
+  zoom: 1;
+  &:before { content: ''; display: block; }
+  &:after { content: ''; display: table; clear: both; }
+}
+.class(@class, @url) {
+	color: @class;
+	background: url(@url) no-repeat;
+	&:hover {
+		background-color: #333 !important;
+	}
+}
+
+/////////////////////
+// variables and shit
+/////////////////////
+
+// general colors
+@mainBackground: #090909;
+
+// class colors
+@paladin: #F58CBA;
+@warrior: #C79C6E;
+@deathknight: #C41F3B;
+@shaman: #0070DE;
+@hunter: #ABD473;
+@druid: #FF7D0A;
+@rogue: #FFF569;
+@priest:  white;
+@mage: #69CCF0;
+@warlock: #9482C9;
+
+// dimensions
+@totalWidth: 500px;
+
+/////////////////
+// actual styling
+/////////////////
+
+// general stylings
+
+.headline {
+	font-family: 'Tulpen One', cursive;
+	font-size: 2em;
+	letter-spacing: .75px;
+	color: white;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {.headline;}
+body {
+	font-family: 'Titillium Web', sans-serif;
+	color: white;
+	background: #050505;
+}
+.tool {
+	width: @totalWidth;
+	background: @mainBackground;
+	margin: 0 auto;
+}
+
+.selected {text-decoration: underline;}
+
+.singleUnitFrame {
+	display: block;
+	font-family: 'VT323', cursive;
+	width: 90px;
+	margin: 0 auto;
+	height: 14px;
+	padding: 2px;
+	border: 1px solid black;
+	border-radius: 3px;
+	text-align: right;
+	font-size: 12px;
+	cursor: hand;
+	cursor: pointer;
+	background-color: #111 !important;
+}
+
+// info box
+.info {
+	text-align: center;
+	font-size: 10px;
+	#ok {display: none;}
+}
+
+// class/specs/roles window
+.classes {
+	.paladin {.class(@paladin, "icons/paladin.gif")}
+	.warrior {.class(@warrior, "icons/warrior.gif")}
+	.deathknight {.class(@deathknight, "icons/deathknight.gif")}
+	.shaman {.class(@shaman, "icons/shaman.gif")}
+	.hunter {.class(@hunter, "icons/hunter.gif")}
+	.druid {.class(@druid, "icons/druid.gif")}
+	.rogue {.class(@rogue, "icons/rogue.gif")}
+	.priest {.class(@priest, "icons/priest.gif")}
+	.mage {.class(@mage, "icons/mage.gif")}
+	.warlock {.class(@warlock, "icons/warlock.gif")}
+}
+.specs {
+	div {display: none;}
+	.paladin {
+		.holy {.class(@paladin, "icons/palaholy.png")}
+		.prot {.class(@paladin, "icons/palaprot.png")}
+		.ret {.class(@paladin, "icons/ret.png")}
+	}
+	.warrior {
+		.prot {.class(@warrior, "icons/warrprot.png")}
+		.fury {.class(@warrior, "icons/fury.png")}
+		.arms {.class(@warrior, "icons/arms.png")}
+	}
+	.deathknight {
+		.blood {.class(@deathknight, "icons/blood.png")}
+		.frost {.class(@deathknight, "icons/dkfrost.png")}
+		.unholy {.class(@deathknight, "icons/unholy.png")}
+	}
+	.shaman {
+		.ele {.class(@shaman, "icons/ele.png")}
+		.enhancement {.class(@shaman, "icons/enhance.png")}
+		.resto {.class(@shaman, "icons/shamanresto.png")}
+	}
+	.hunter {
+		.bm {.class(@hunter, "icons/bm.png")}
+		.mm {.class(@hunter, "icons/mm.png")}
+		.survival {.class(@hunter, "icons/survival.png")}
+	}
+	.druid {
+		.balance {.class(@druid, "icons/balance.png")}
+		.feral {.class(@druid, "icons/feral.png")}
+		.resto {.class(@druid, "icons/druidresto.png")}
+	}
+	.rogue {
+		.assassin {.class(@rogue, "icons/assassin.png")}
+		.combat {.class(@rogue, "icons/combat.png")}
+		.subtlety {.class(@rogue, "icons/subtlety.png")}
+	}
+	.priest {
+		.disc {.class(@priest, "icons/disc.png")}
+		.holy {.class(@priest, "icons/priestholy.png")}
+		.shadow {.class(@priest, "icons/shadow.png")}
+	}
+	.mage {
+		.arcane {.class(@mage, "icons/arcane.png")}
+		.fire {.class(@mage, "icons/fire.png")}
+		.frost {.class(@mage, "icons/magefrost.png")}
+	}
+	.warlock {
+		.aff {.class(@warlock, "icons/aff.png")}
+		.demo {.class(@warlock, "icons/demo.png")}
+		.destro {.class(@warlock, "icons/destro.png")}
+	}
+}
+.roles {
+	div {
+		display: none;
+		.dps {.class(#a60000, "icons/dps.png")}
+		.tank {.class(#1142AA, "icons/tank.png")}
+		.heal {.class(white, "icons/heal.png")}
+	}
+}
+
+.inviter {
+	.clearfix();
+	.classes, .specs, .roles {
+		float: left;
+		width: @totalWidth/3;
+	}
+}
+.classes, .specs {width: @totalWidth/3;}
+
+
+// raid window
+.raid {
+	.clearfix();
+	// width: 240px;
+}
+
+.group {
+	width: 100px;
+	float: left;
+	margin: 0 70px 5px;
+}
+
+.frame {
+	.singleUnitFrame();
+	border: 1px solid gray;
+	// width: auto;
+	// height: 20px;
+	// padding: 2px 0;
+	// border: 1px solid gray;
+	// border-radius: 3px;
+}

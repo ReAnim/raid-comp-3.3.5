@@ -1,0 +1,416 @@
+.headline {
+  font-family: 'Tulpen One', cursive;
+  font-size: 2em;
+  letter-spacing: .75px;
+  color: white;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Tulpen One', cursive;
+  font-size: 2em;
+  letter-spacing: .75px;
+  color: white;
+  text-align: center;
+}
+body {
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  background: #050505;
+}
+.tool {
+  width: 500px;
+  background: #090909;
+  margin: 0 auto;
+}
+.selected {
+  text-decoration: underline;
+}
+.singleUnitFrame {
+  display: block;
+  font-family: 'VT323', cursive;
+  width: 90px;
+  margin: 0 auto;
+  height: 14px;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-align: right;
+  font-size: 12px;
+  cursor: hand;
+  cursor: pointer;
+  background-color: #111 !important;
+}
+.info {
+  text-align: center;
+  font-size: 10px;
+}
+.info #ok {
+  display: none;
+}
+.classes .paladin {
+  color: #f58cba;
+  background: url("icons/paladin.gif") no-repeat;
+}
+.classes .paladin:hover {
+  background-color: #333 !important;
+}
+.classes .warrior {
+  color: #c79c6e;
+  background: url("icons/warrior.gif") no-repeat;
+}
+.classes .warrior:hover {
+  background-color: #333 !important;
+}
+.classes .deathknight {
+  color: #c41f3b;
+  background: url("icons/deathknight.gif") no-repeat;
+}
+.classes .deathknight:hover {
+  background-color: #333 !important;
+}
+.classes .shaman {
+  color: #0070de;
+  background: url("icons/shaman.gif") no-repeat;
+}
+.classes .shaman:hover {
+  background-color: #333 !important;
+}
+.classes .hunter {
+  color: #abd473;
+  background: url("icons/hunter.gif") no-repeat;
+}
+.classes .hunter:hover {
+  background-color: #333 !important;
+}
+.classes .druid {
+  color: #ff7d0a;
+  background: url("icons/druid.gif") no-repeat;
+}
+.classes .druid:hover {
+  background-color: #333 !important;
+}
+.classes .rogue {
+  color: #fff569;
+  background: url("icons/rogue.gif") no-repeat;
+}
+.classes .rogue:hover {
+  background-color: #333 !important;
+}
+.classes .priest {
+  color: #ffffff;
+  background: url("icons/priest.gif") no-repeat;
+}
+.classes .priest:hover {
+  background-color: #333 !important;
+}
+.classes .mage {
+  color: #69ccf0;
+  background: url("icons/mage.gif") no-repeat;
+}
+.classes .mage:hover {
+  background-color: #333 !important;
+}
+.classes .warlock {
+  color: #9482c9;
+  background: url("icons/warlock.gif") no-repeat;
+}
+.classes .warlock:hover {
+  background-color: #333 !important;
+}
+.specs div {
+  display: none;
+}
+.specs .paladin .holy {
+  color: #f58cba;
+  background: url("icons/palaholy.png") no-repeat;
+}
+.specs .paladin .holy:hover {
+  background-color: #333 !important;
+}
+.specs .paladin .prot {
+  color: #f58cba;
+  background: url("icons/palaprot.png") no-repeat;
+}
+.specs .paladin .prot:hover {
+  background-color: #333 !important;
+}
+.specs .paladin .ret {
+  color: #f58cba;
+  background: url("icons/ret.png") no-repeat;
+}
+.specs .paladin .ret:hover {
+  background-color: #333 !important;
+}
+.specs .warrior .prot {
+  color: #c79c6e;
+  background: url("icons/warrprot.png") no-repeat;
+}
+.specs .warrior .prot:hover {
+  background-color: #333 !important;
+}
+.specs .warrior .fury {
+  color: #c79c6e;
+  background: url("icons/fury.png") no-repeat;
+}
+.specs .warrior .fury:hover {
+  background-color: #333 !important;
+}
+.specs .warrior .arms {
+  color: #c79c6e;
+  background: url("icons/arms.png") no-repeat;
+}
+.specs .warrior .arms:hover {
+  background-color: #333 !important;
+}
+.specs .deathknight .blood {
+  color: #c41f3b;
+  background: url("icons/blood.png") no-repeat;
+}
+.specs .deathknight .blood:hover {
+  background-color: #333 !important;
+}
+.specs .deathknight .frost {
+  color: #c41f3b;
+  background: url("icons/dkfrost.png") no-repeat;
+}
+.specs .deathknight .frost:hover {
+  background-color: #333 !important;
+}
+.specs .deathknight .unholy {
+  color: #c41f3b;
+  background: url("icons/unholy.png") no-repeat;
+}
+.specs .deathknight .unholy:hover {
+  background-color: #333 !important;
+}
+.specs .shaman .ele {
+  color: #0070de;
+  background: url("icons/ele.png") no-repeat;
+}
+.specs .shaman .ele:hover {
+  background-color: #333 !important;
+}
+.specs .shaman .enhancement {
+  color: #0070de;
+  background: url("icons/enhance.png") no-repeat;
+}
+.specs .shaman .enhancement:hover {
+  background-color: #333 !important;
+}
+.specs .shaman .resto {
+  color: #0070de;
+  background: url("icons/shamanresto.png") no-repeat;
+}
+.specs .shaman .resto:hover {
+  background-color: #333 !important;
+}
+.specs .hunter .bm {
+  color: #abd473;
+  background: url("icons/bm.png") no-repeat;
+}
+.specs .hunter .bm:hover {
+  background-color: #333 !important;
+}
+.specs .hunter .mm {
+  color: #abd473;
+  background: url("icons/mm.png") no-repeat;
+}
+.specs .hunter .mm:hover {
+  background-color: #333 !important;
+}
+.specs .hunter .survival {
+  color: #abd473;
+  background: url("icons/survival.png") no-repeat;
+}
+.specs .hunter .survival:hover {
+  background-color: #333 !important;
+}
+.specs .druid .balance {
+  color: #ff7d0a;
+  background: url("icons/balance.png") no-repeat;
+}
+.specs .druid .balance:hover {
+  background-color: #333 !important;
+}
+.specs .druid .feral {
+  color: #ff7d0a;
+  background: url("icons/feral.png") no-repeat;
+}
+.specs .druid .feral:hover {
+  background-color: #333 !important;
+}
+.specs .druid .resto {
+  color: #ff7d0a;
+  background: url("icons/druidresto.png") no-repeat;
+}
+.specs .druid .resto:hover {
+  background-color: #333 !important;
+}
+.specs .rogue .assassin {
+  color: #fff569;
+  background: url("icons/assassin.png") no-repeat;
+}
+.specs .rogue .assassin:hover {
+  background-color: #333 !important;
+}
+.specs .rogue .combat {
+  color: #fff569;
+  background: url("icons/combat.png") no-repeat;
+}
+.specs .rogue .combat:hover {
+  background-color: #333 !important;
+}
+.specs .rogue .subtlety {
+  color: #fff569;
+  background: url("icons/subtlety.png") no-repeat;
+}
+.specs .rogue .subtlety:hover {
+  background-color: #333 !important;
+}
+.specs .priest .disc {
+  color: #ffffff;
+  background: url("icons/disc.png") no-repeat;
+}
+.specs .priest .disc:hover {
+  background-color: #333 !important;
+}
+.specs .priest .holy {
+  color: #ffffff;
+  background: url("icons/priestholy.png") no-repeat;
+}
+.specs .priest .holy:hover {
+  background-color: #333 !important;
+}
+.specs .priest .shadow {
+  color: #ffffff;
+  background: url("icons/shadow.png") no-repeat;
+}
+.specs .priest .shadow:hover {
+  background-color: #333 !important;
+}
+.specs .mage .arcane {
+  color: #69ccf0;
+  background: url("icons/arcane.png") no-repeat;
+}
+.specs .mage .arcane:hover {
+  background-color: #333 !important;
+}
+.specs .mage .fire {
+  color: #69ccf0;
+  background: url("icons/fire.png") no-repeat;
+}
+.specs .mage .fire:hover {
+  background-color: #333 !important;
+}
+.specs .mage .frost {
+  color: #69ccf0;
+  background: url("icons/magefrost.png") no-repeat;
+}
+.specs .mage .frost:hover {
+  background-color: #333 !important;
+}
+.specs .warlock .aff {
+  color: #9482c9;
+  background: url("icons/aff.png") no-repeat;
+}
+.specs .warlock .aff:hover {
+  background-color: #333 !important;
+}
+.specs .warlock .demo {
+  color: #9482c9;
+  background: url("icons/demo.png") no-repeat;
+}
+.specs .warlock .demo:hover {
+  background-color: #333 !important;
+}
+.specs .warlock .destro {
+  color: #9482c9;
+  background: url("icons/destro.png") no-repeat;
+}
+.specs .warlock .destro:hover {
+  background-color: #333 !important;
+}
+.roles div {
+  display: none;
+}
+.roles div .dps {
+  color: #a60000;
+  background: url("icons/dps.png") no-repeat;
+}
+.roles div .dps:hover {
+  background-color: #333 !important;
+}
+.roles div .tank {
+  color: #1142aa;
+  background: url("icons/tank.png") no-repeat;
+}
+.roles div .tank:hover {
+  background-color: #333 !important;
+}
+.roles div .heal {
+  color: #ffffff;
+  background: url("icons/heal.png") no-repeat;
+}
+.roles div .heal:hover {
+  background-color: #333 !important;
+}
+.inviter {
+  zoom: 1;
+}
+.inviter:before {
+  content: '';
+  display: block;
+}
+.inviter:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.inviter .classes,
+.inviter .specs,
+.inviter .roles {
+  float: left;
+  width: 166.66666666666666px;
+}
+.classes,
+.specs {
+  width: 166.66666666666666px;
+}
+.raid {
+  zoom: 1;
+}
+.raid:before {
+  content: '';
+  display: block;
+}
+.raid:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.group {
+  width: 100px;
+  float: left;
+  margin: 0 70px 5px;
+}
+.frame {
+  display: block;
+  font-family: 'VT323', cursive;
+  width: 90px;
+  margin: 0 auto;
+  height: 14px;
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 3px;
+  text-align: right;
+  font-size: 12px;
+  cursor: hand;
+  cursor: pointer;
+  background-color: #111 !important;
+  border: 1px solid gray;
+}
