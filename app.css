@@ -1,7 +1,7 @@
 body {
   font-family: 'Titillium Web', sans-serif;
   color: white;
-  background: #050505;
+  background: url('http://media.blizzard.com/wow/media/fanart/fanart-1306-full.jpg') no-repeat fixed #050505;
   font-size: 10px;
 }
 .headline {
@@ -37,7 +37,7 @@ hr {
 }
 .tool {
   width: 500px;
-  background: #090909;
+  background: rgba(30, 30, 30, 0.95);
   margin: 0 auto;
   zoom: 1;
 }
