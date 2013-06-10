@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Raid Composition Planner -- Version 0.02</title>
+	<title>Raid Composition Planner -- Version 0.025</title>
 	<link href='http://fonts.googleapis.com/css?family=Tulpen+One|VT323|Titillium+Web' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
 	<link rel="stylesheet" href="app.css">
@@ -97,10 +97,11 @@
 				</div>
 			</div> <!-- .roles -->
 		</div> <!-- .inviter -->
+		<hr>
 		<div class="raid">
 			<h3>raid</h3>
 			<div class="group group1">
-				Group 1
+				<p class="groupName">Group 1</p>
 				<span class="frame"></span>
 				<span class="frame"></span>
 				<span class="frame"></span>
@@ -108,7 +109,7 @@
 				<span class="frame"></span>
 			</div>
 			<div class="group group2">
-				Group 2
+				<p class="groupName">Group 2</p>
 				<span class="frame"></span>
 				<span class="frame"></span>
 				<span class="frame"></span>
@@ -116,7 +117,7 @@
 				<span class="frame"></span>
 			</div>
 			<div class="group group3">
-				Group 3
+				<p class="groupName">Group 3</p>
 				<span class="frame"></span>
 				<span class="frame"></span>
 				<span class="frame"></span>
@@ -124,7 +125,7 @@
 				<span class="frame"></span>
 			</div>
 			<div class="group group4">
-				Group 4
+				<p class="groupName">Group 4</p>
 				<span class="frame"></span>
 				<span class="frame"></span>
 				<span class="frame"></span>
@@ -132,7 +133,7 @@
 				<span class="frame"></span>
 			</div>
 			<div class="group group5">
-				Group 5
+				<p class="groupName">Group 5</p>
 				<span class="frame"></span>
 				<span class="frame"></span>
 				<span class="frame"></span>
@@ -140,6 +141,22 @@
 				<span class="frame"></span>
 			</div>
 		</div> <!-- .raid -->
+		<div class="stats">
+			<h3>stats</h3>
+			<div class="roles">
+				<span class="title">Roles</span>
+				<p>Tanks: <span class="tank">0</span></p>
+				<p>DPS: <span class="dps">0</span></p>
+				<p>Heals: <span class="heal">0</span></p>
+			</div>
+			<div class="dps">
+				<span class="title">DPS breakdown</span>
+				<p>MDPS: <span class="mdps">0</span></p>
+				<p>RDPS: <span class="rdps">0</span></p>
+				<p>Physical DPS: <span class="physical">0</span></p>
+				<p>Magical DPS: <span class="magical">0</span></p>
+			</div>
+		</div>
 	</div> <!-- .tool -->
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>

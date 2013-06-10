@@ -1,9 +1,17 @@
+body {
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  background: #050505;
+  font-size: 10px;
+}
 .headline {
   font-family: 'Tulpen One', cursive;
-  font-size: 2em;
+  font-size: 3em !important;
   letter-spacing: .75px;
   color: white;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 h1,
 h2,
@@ -12,20 +20,35 @@ h4,
 h5,
 h6 {
   font-family: 'Tulpen One', cursive;
-  font-size: 2em;
+  font-size: 3em !important;
   letter-spacing: .75px;
   color: white;
   text-align: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
-body {
-  font-family: 'Titillium Web', sans-serif;
-  color: white;
-  background: #050505;
+p {
+  margin-top: 0;
+  margin-bottom: 2px;
+}
+hr {
+  border: none;
+  border-bottom: 1px solid #444444;
 }
 .tool {
   width: 500px;
   background: #090909;
   margin: 0 auto;
+  zoom: 1;
+}
+.tool:before {
+  content: '';
+  display: block;
+}
+.tool:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 .selected {
   text-decoration: underline;
@@ -47,7 +70,9 @@ body {
 }
 .info {
   text-align: center;
-  font-size: 10px;
+}
+.info span {
+  font-weight: bold;
 }
 .info #ok {
   display: none;
@@ -383,6 +408,8 @@ body {
 }
 .raid {
   zoom: 1;
+  width: 250px;
+  float: left;
 }
 .raid:before {
   content: '';
@@ -394,9 +421,23 @@ body {
   clear: both;
 }
 .group {
-  width: 100px;
+  width: 50px;
   float: left;
-  margin: 0 70px 5px;
+  margin: 0 35.714285714285715px 5px;
+  zoom: 1;
+}
+.group:before {
+  content: '';
+  display: block;
+}
+.group:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.group .groupName {
+  text-indent: 5px;
+  color: #eee;
 }
 .frame {
   display: block;
@@ -413,4 +454,34 @@ body {
   cursor: pointer;
   background-color: #111 !important;
   border: 1px solid gray;
+}
+.stats {
+  display: inline-block;
+  width: 250px;
+  zoom: 1;
+  float: left;
+}
+.stats:before {
+  content: '';
+  display: block;
+}
+.stats:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.stats div {
+  margin-left: 50px;
+  margin-right: 10px;
+}
+.stats div p {
+  clear: both;
+}
+.stats div span {
+  float: right;
+}
+.stats div span.title {
+  float: left;
+  font-weight: bold;
+  text-decoration: underline;
 }

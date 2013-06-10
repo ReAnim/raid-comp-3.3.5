@@ -1,7 +1,7 @@
 # raid composition for 3.3.5
 # inspired by http://raidcomp.mmo-champion.com/
 # written by Murlorc
-# version 0.02
+# version 0.025
 
 # list of all classes
 classes = ["warrior", "paladin", "deathknight",
@@ -20,6 +20,11 @@ specs =
 	"mage" : ['arcane', 'fire', 'frost'],
 	"priest" : ['disc', 'holy', 'shadow'],
 	"warlock" : ['aff', 'demo', 'destro']
+
+# raid groups
+groups = []
+for i in [1..5]
+	groups.push "group#{i}"
 
 # default unit frame information
 defaultUnitFrame =
@@ -149,25 +154,70 @@ roleHandler = (role) ->
 # reset everything
 resetInviter = ->
 
-	$('#reset').click ->
+	# hide the OK button
+	$('#ok').hide()
+
+	# hide the roles
+	$(".roles div").hide()
+
+	# hide the specs
+	$(".specs div").hide()
+
+	# unhighlight the class
+	$(".classes span").removeClass('selected')
+
+	# reset info text
+	$('span.spec, span.klass, span.role').text("")
+
+resetInviterHandler = ->
+
+	$('#reset').click (event) ->
+		
+		# prevent default click action 
+		event.preventDefault()
+
+		resetInviter()
+
+
+# send out invite
+invite = ->
+
+	# function to update status role counter
+	updateStatsRoleCount = (role) ->
+
+		# get current counter
+		current = parseInt($(".stats .roles .#{role}").text())
+		# update counter with 1 more
+		$(".stats .roles .#{role}").text(current + 1)
+
+	# set the class
+	for c in classes
+		if $('.classes .selected').hasClass c
+			klass = c
+
+	# set the spec
+	for specs in specs[klass]
+		if $(".specs .#{klass} .selected").hasClass specs
+			spec = specs
+
+	# set the role
+	for roles in ["dps", "tank", "heal"]
+		if $(".roles .#{roles} .selected").hasClass roles
+			role = roles
+
+	updateStatsRoleCount role
+
+	# reset everything
+	resetInviter()
+
+inviteHandler = ->
+	$("#ok").click (event) ->
 
 		# prevent default click action
 		event.preventDefault()
-		
-		# hide the OK button
-		$('#ok').hide()
 
-		# hide the roles
-		$(".roles div").hide()
-
-		# hide the specs
-		$(".specs div").hide()
-
-		# unhighlight the class
-		$(".classes span").removeClass('selected')
-
-		# reset info text
-		$('span.spec, span.klass, span.role').text("")
+		# resetInviter()
+		invite()
 
 
 # init
@@ -185,7 +235,7 @@ $ ->
 		roleHandler(role)
 
 	# initialize handler for reset button
-	resetInviter()
+	resetInviterHandler()
 
 	# initialize handler for OK button
-	# invite()
+	inviteHandler()

@@ -1,7 +1,7 @@
 // raid composition for 3.3.5
 // inspired by http://raidcomp.mmo-champion.com/
 // written by Murlorc
-// version 0.02
+// version 0.025
 
 //////////////////
 // mixins and shit
@@ -21,6 +21,10 @@
 		background-color: #333 !important;
 	}
 }
+.divider() {
+	border: none;
+	border-bottom: 1px solid @dividerColor;
+}
 
 /////////////////////
 // variables and shit
@@ -37,12 +41,16 @@
 @hunter: #ABD473;
 @druid: #FF7D0A;
 @rogue: #FFF569;
-@priest:  white;
+@priest: white;
 @mage: #69CCF0;
 @warlock: #9482C9;
 
+// misc other colors
+@dividerColor: #444;
+
 // dimensions
 @totalWidth: 500px;
+@raidWidth: @totalWidth/2;
 
 /////////////////
 // actual styling
@@ -50,23 +58,32 @@
 
 // general stylings
 
-.headline {
-	font-family: 'Tulpen One', cursive;
-	font-size: 2em;
-	letter-spacing: .75px;
-	color: white;
-	text-align: center;
-}
-h1, h2, h3, h4, h5, h6 {.headline;}
 body {
 	font-family: 'Titillium Web', sans-serif;
 	color: white;
 	background: #050505;
+	font-size: 10px;
 }
+.headline {
+	font-family: 'Tulpen One', cursive;
+	font-size: 3em !important;
+	letter-spacing: .75px;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+h1, h2, h3, h4, h5, h6 {.headline;}
+p {
+	margin-top: 0;
+	margin-bottom: 2px;
+}
+hr {.divider();}
 .tool {
 	width: @totalWidth;
 	background: @mainBackground;
 	margin: 0 auto;
+	.clearfix();
 }
 
 .selected {text-decoration: underline;}
@@ -90,7 +107,7 @@ body {
 // info box
 .info {
 	text-align: center;
-	font-size: 10px;
+	span {font-weight: bold;}
 	#ok {display: none;}
 }
 
@@ -178,25 +195,44 @@ body {
 }
 .classes, .specs {width: @totalWidth/3;}
 
-
 // raid window
 .raid {
 	.clearfix();
-	// width: 240px;
+	width: @raidWidth;
+	float: left;
 }
 
 .group {
-	width: 100px;
+	width: @raidWidth/5;
 	float: left;
-	margin: 0 70px 5px;
+	margin: 0 @raidWidth/7 5px;
+	.clearfix();
+	.groupName {
+		text-indent: 5px;
+		color: #eee;
+	}
 }
 
 .frame {
 	.singleUnitFrame();
 	border: 1px solid gray;
-	// width: auto;
-	// height: 20px;
-	// padding: 2px 0;
-	// border: 1px solid gray;
-	// border-radius: 3px;
+}
+
+// stats box
+.stats {
+	display: inline-block;
+	width: @totalWidth - @raidWidth;
+	.clearfix();
+	float: left;
+	div {
+		margin-left: 50px;
+		margin-right: 10px;
+		p {clear: both;}
+		span {float: right;}
+		span.title {
+			float: left;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+	}
 }
