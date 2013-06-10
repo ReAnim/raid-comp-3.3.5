@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Raid Composition Planner -- Version 0.025</title>
+	<link href='http://fonts.googleapis.com/css?family=Tulpen+One|VT323|Titillium+Web' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+	<div class="tool">
+		<div class="info">
+			<p>
+				You are inviting:&nbsp;<span class="spec"></span> <span class="klass"></span> <span class="role"></span>
+			</p>
+			<p>
+				<span id="reset"><a href="#">reset</a></span>&nbsp;<span id="ok">&#124;&nbsp;<a href="#">ok</a></span>
+			</p>
+		</div>
+		<div class="inviter">
+			<div class="classes">
+				<h2>class</h2>
+				<span class="singleUnitFrame paladin">Paladin</span>
+				<span class="singleUnitFrame warrior">Warrior</span>
+				<span class="singleUnitFrame deathknight">Death Knight</span>
+				<span class="singleUnitFrame shaman">Shaman</span>
+				<span class="singleUnitFrame hunter">Hunter</span>
+				<span class="singleUnitFrame druid">Druid</span>
+				<span class="singleUnitFrame rogue">Rogue</span>
+				<span class="singleUnitFrame priest">Priest</span>
+				<span class="singleUnitFrame mage">Mage</span>
+				<span class="singleUnitFrame warlock">Warlock</span>
+			</div>
+			<div class="specs">
+				<h2>spec</h2>
+				<div class="paladin">
+					<span class="singleUnitFrame holy">Holy</span>
+					<span class="singleUnitFrame prot">Protection</span>
+					<span class="singleUnitFrame ret">Retribution</span>
+				</div>
+				<div class="warrior">
+					<span class="singleUnitFrame prot">Prot</span>
+					<span class="singleUnitFrame fury">Fury</span>
+					<span class="singleUnitFrame arms">Arms</span>
+				</div>
+				<div class="deathknight">
+					<span class="singleUnitFrame blood">Blood</span>
+					<span class="singleUnitFrame frost">Frost</span>
+					<span class="singleUnitFrame unholy">Unholy</span>
+				</div>
+				<div class="shaman">
+					<span class="singleUnitFrame ele">Elemental</span>
+					<span class="singleUnitFrame enhancement">Enhancement</span>
+					<span class="singleUnitFrame resto">Restoration</span>
+				</div>
+				<div class="hunter">
+					<span class="singleUnitFrame bm">Beast Mastery</span>
+					<span class="singleUnitFrame mm">Marksmanship</span>
+					<span class="singleUnitFrame survival">Survival</span>
+				</div>
+				<div class="druid">
+					<span class="singleUnitFrame balance">Balance</span>
+					<span class="singleUnitFrame feral">Feral Combat</span>
+					<span class="singleUnitFrame resto">Restoration</span>
+				</div>
+				<div class="rogue">
+					<span class="singleUnitFrame assassin">Assassination</span>
+					<span class="singleUnitFrame combat">Combat</span>
+					<span class="singleUnitFrame subtlety">Subtlety</span>
+				</div>
+				<div class="priest">
+					<span class="singleUnitFrame disc">Discipline</span>
+					<span class="singleUnitFrame holy">Holy</span>
+					<span class="singleUnitFrame shadow">Shadow</span>
+				</div>
+				<div class="mage">
+					<span class="singleUnitFrame arcane">Arcane</span>
+					<span class="singleUnitFrame fire">Fire</span>
+					<span class="singleUnitFrame frost">Frost</span>
+				</div>
+				<div class="warlock">
+					<span class="singleUnitFrame aff">Affliction</span>
+					<span class="singleUnitFrame demo">Demonology</span>
+					<span class="singleUnitFrame destro">Destruction</span>
+				</div>
+			</div> <!-- .spec -->
+			<div class="roles">
+				<h2>role</h2>
+				<div class="tank">
+					<span class="singleUnitFrame tank">Tank</span>
+				</div>
+				<div class="dps">
+					<span class="singleUnitFrame dps">DPS</span>
+				</div>
+				<div class="heal">
+					<span class="singleUnitFrame heal">Heal</span>
+				</div>
+			</div> <!-- .roles -->
+		</div> <!-- .inviter -->
+		<hr>
+		<div class="raid">
+			<h3>raid</h3>
+			<div class="group group1">
+				<p class="groupName">Group 1</p>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+			</div>
+			<div class="group group2">
+				<p class="groupName">Group 2</p>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+			</div>
+			<div class="group group3">
+				<p class="groupName">Group 3</p>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+			</div>
+			<div class="group group4">
+				<p class="groupName">Group 4</p>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+			</div>
+			<div class="group group5">
+				<p class="groupName">Group 5</p>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+				<span class="frame"></span>
+			</div>
+		</div> <!-- .raid -->
+		<div class="stats">
+			<h3>stats</h3>
+			<div class="roles">
+				<span class="title">Roles</span>
+				<p>Tanks: <span class="tank">0</span></p>
+				<p>DPS: <span class="dps">0</span></p>
+				<p>Heals: <span class="heal">0</span></p>
+			</div>
+			<div class="dps">
+				<span class="title">DPS breakdown</span>
+				<p>MDPS: <span class="mdps">0</span></p>
+				<p>RDPS: <span class="rdps">0</span></p>
+				<p>Physical DPS: <span class="physical">0</span></p>
+				<p>Magical DPS: <span class="magical">0</span></p>
+			</div>
+		</div>
+	</div> <!-- .tool -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
