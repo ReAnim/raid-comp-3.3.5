@@ -178,6 +178,46 @@ resetInviterHandler = ->
 
 		resetInviter()
 
+# find the first empty slot in the raid
+findNextEmptySlot = ->
+
+	groupHasEmptySlot = (group) ->
+
+		slots = $(".raid .#{group} div")
+
+		for slot in slots
+
+			if $(slot).find('span').text().length is 0
+				return true
+
+		return false
+
+	getNextEmptySlotInGroup = (group) ->
+		# assumes group has an empty slot
+		slots = $(".raid .#{group} div")
+
+		for slot in slots
+
+			if $(slot).find('span').text().length is 0
+				return slot
+
+	for group in groups
+
+		if groupHasEmptySlot(group)
+
+			return getNextEmptySlotInGroup(group)
+
+	throw Error
+
+# add unit to raidframe
+addUnitToRaidFrame = (klass, spec, role) ->
+
+	try # get first empty slot available
+		slot = findNextEmptySlot()
+		$(slot).addClass(klass).find('span').addClass(spec).text(role)
+	catch error
+		alert "There are no more empty slots."
+	
 
 # send out invite
 invite = ->
@@ -224,7 +264,8 @@ invite = ->
 		else
 			updateStatsDpsCount("physical")
 
-	# 
+	# update the raid frame
+	addUnitToRaidFrame(klass, spec, role)
 
 inviteHandler = ->
 	$("#ok").click (event) ->

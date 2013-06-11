@@ -1,7 +1,7 @@
 // raid composition for 3.3.5
 // inspired by http://raidcomp.mmo-champion.com/
 // written by Murlorc
-// version 0.025
+// version 0.08
 // background taken from http://us.battle.net/wow/en/media/fanart/?view#/fanart-1306
 
 //////////////////
@@ -125,8 +125,7 @@ hr {.divider();}
 	.mage {.class(@mage, "icons/mage.gif")}
 	.warlock {.class(@warlock, "icons/warlock.gif")}
 }
-.specs {
-	div {display: none;}
+.Classes() {
 	.paladin {
 		.holy {.class(@paladin, "icons/palaholy.png")}
 		.prot {.class(@paladin, "icons/palaprot.png")}
@@ -178,6 +177,14 @@ hr {.divider();}
 		.destro {.class(@warlock, "icons/destro.png")}
 	}
 }
+.specs {
+	div {display: none;}
+	.Classes();
+}
+.raid {
+	.Classes();
+}
+
 .roles {
 	div {
 		display: none;

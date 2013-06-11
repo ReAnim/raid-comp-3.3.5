@@ -360,6 +360,216 @@ hr {
 .specs .warlock .destro:hover {
   background-color: #333 !important;
 }
+.raid .paladin .holy {
+  color: #f58cba;
+  background: url("icons/palaholy.png") no-repeat;
+}
+.raid .paladin .holy:hover {
+  background-color: #333 !important;
+}
+.raid .paladin .prot {
+  color: #f58cba;
+  background: url("icons/palaprot.png") no-repeat;
+}
+.raid .paladin .prot:hover {
+  background-color: #333 !important;
+}
+.raid .paladin .ret {
+  color: #f58cba;
+  background: url("icons/ret.png") no-repeat;
+}
+.raid .paladin .ret:hover {
+  background-color: #333 !important;
+}
+.raid .warrior .prot {
+  color: #c79c6e;
+  background: url("icons/warrprot.png") no-repeat;
+}
+.raid .warrior .prot:hover {
+  background-color: #333 !important;
+}
+.raid .warrior .fury {
+  color: #c79c6e;
+  background: url("icons/fury.png") no-repeat;
+}
+.raid .warrior .fury:hover {
+  background-color: #333 !important;
+}
+.raid .warrior .arms {
+  color: #c79c6e;
+  background: url("icons/arms.png") no-repeat;
+}
+.raid .warrior .arms:hover {
+  background-color: #333 !important;
+}
+.raid .deathknight .blood {
+  color: #c41f3b;
+  background: url("icons/blood.png") no-repeat;
+}
+.raid .deathknight .blood:hover {
+  background-color: #333 !important;
+}
+.raid .deathknight .frost {
+  color: #c41f3b;
+  background: url("icons/dkfrost.png") no-repeat;
+}
+.raid .deathknight .frost:hover {
+  background-color: #333 !important;
+}
+.raid .deathknight .unholy {
+  color: #c41f3b;
+  background: url("icons/unholy.png") no-repeat;
+}
+.raid .deathknight .unholy:hover {
+  background-color: #333 !important;
+}
+.raid .shaman .ele {
+  color: #0070de;
+  background: url("icons/ele.png") no-repeat;
+}
+.raid .shaman .ele:hover {
+  background-color: #333 !important;
+}
+.raid .shaman .enhancement {
+  color: #0070de;
+  background: url("icons/enhance.png") no-repeat;
+}
+.raid .shaman .enhancement:hover {
+  background-color: #333 !important;
+}
+.raid .shaman .resto {
+  color: #0070de;
+  background: url("icons/shamanresto.png") no-repeat;
+}
+.raid .shaman .resto:hover {
+  background-color: #333 !important;
+}
+.raid .hunter .bm {
+  color: #abd473;
+  background: url("icons/bm.png") no-repeat;
+}
+.raid .hunter .bm:hover {
+  background-color: #333 !important;
+}
+.raid .hunter .mm {
+  color: #abd473;
+  background: url("icons/mm.png") no-repeat;
+}
+.raid .hunter .mm:hover {
+  background-color: #333 !important;
+}
+.raid .hunter .survival {
+  color: #abd473;
+  background: url("icons/survival.png") no-repeat;
+}
+.raid .hunter .survival:hover {
+  background-color: #333 !important;
+}
+.raid .druid .balance {
+  color: #ff7d0a;
+  background: url("icons/balance.png") no-repeat;
+}
+.raid .druid .balance:hover {
+  background-color: #333 !important;
+}
+.raid .druid .feral {
+  color: #ff7d0a;
+  background: url("icons/feral.png") no-repeat;
+}
+.raid .druid .feral:hover {
+  background-color: #333 !important;
+}
+.raid .druid .resto {
+  color: #ff7d0a;
+  background: url("icons/druidresto.png") no-repeat;
+}
+.raid .druid .resto:hover {
+  background-color: #333 !important;
+}
+.raid .rogue .assassin {
+  color: #fff569;
+  background: url("icons/assassin.png") no-repeat;
+}
+.raid .rogue .assassin:hover {
+  background-color: #333 !important;
+}
+.raid .rogue .combat {
+  color: #fff569;
+  background: url("icons/combat.png") no-repeat;
+}
+.raid .rogue .combat:hover {
+  background-color: #333 !important;
+}
+.raid .rogue .subtlety {
+  color: #fff569;
+  background: url("icons/subtlety.png") no-repeat;
+}
+.raid .rogue .subtlety:hover {
+  background-color: #333 !important;
+}
+.raid .priest .disc {
+  color: #ffffff;
+  background: url("icons/disc.png") no-repeat;
+}
+.raid .priest .disc:hover {
+  background-color: #333 !important;
+}
+.raid .priest .holy {
+  color: #ffffff;
+  background: url("icons/priestholy.png") no-repeat;
+}
+.raid .priest .holy:hover {
+  background-color: #333 !important;
+}
+.raid .priest .shadow {
+  color: #ffffff;
+  background: url("icons/shadow.png") no-repeat;
+}
+.raid .priest .shadow:hover {
+  background-color: #333 !important;
+}
+.raid .mage .arcane {
+  color: #69ccf0;
+  background: url("icons/arcane.png") no-repeat;
+}
+.raid .mage .arcane:hover {
+  background-color: #333 !important;
+}
+.raid .mage .fire {
+  color: #69ccf0;
+  background: url("icons/fire.png") no-repeat;
+}
+.raid .mage .fire:hover {
+  background-color: #333 !important;
+}
+.raid .mage .frost {
+  color: #69ccf0;
+  background: url("icons/magefrost.png") no-repeat;
+}
+.raid .mage .frost:hover {
+  background-color: #333 !important;
+}
+.raid .warlock .aff {
+  color: #9482c9;
+  background: url("icons/aff.png") no-repeat;
+}
+.raid .warlock .aff:hover {
+  background-color: #333 !important;
+}
+.raid .warlock .demo {
+  color: #9482c9;
+  background: url("icons/demo.png") no-repeat;
+}
+.raid .warlock .demo:hover {
+  background-color: #333 !important;
+}
+.raid .warlock .destro {
+  color: #9482c9;
+  background: url("icons/destro.png") no-repeat;
+}
+.raid .warlock .destro:hover {
+  background-color: #333 !important;
+}
 .roles div {
   display: none;
 }
