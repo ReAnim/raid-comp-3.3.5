@@ -119,12 +119,12 @@ specRolesHandler = (klass, spec) ->
 			$('.info span.role').text("")
 			$('#ok').hide()
 
+		# remove other highlights
+		for s in specComplement(klass, spec)
+			$(".specs .#{klass} .#{s}").removeClass('selected')
+
 		# highlight the clicked frame
 		$(this).addClass('selected')
-
-		for c in specComplement(klass, spec)
-			# remove underline from other specs
-			$(".specs .#{c}").removeClass('selected')
 
 		# show what roles this spec can take
 		showRoles(klass, spec)
@@ -157,11 +157,11 @@ resetInviter = ->
 	# hide the OK button
 	$('#ok').hide()
 
-	# hide the roles
-	$(".roles div").hide()
+	# hide the roles, unhighlight them
+	$(".roles div").hide().find('span').removeClass('selected')
 
-	# hide the specs
-	$(".specs div").hide()
+	# hide the specs, unhighlight
+	$(".specs div").hide().find('span').removeClass('selected')
 
 	# unhighlight the class
 	$(".classes span").removeClass('selected')
@@ -190,25 +190,41 @@ invite = ->
 		# update counter with 1 more
 		$(".stats .roles .#{role}").text(current + 1)
 
+	updateStatsDpsCount = (dps) ->
+		current = parseInt($(".stats .dps .#{dps}").text())
+		$(".stats .dps .#{dps}").text(current + 1)
+
 	# set the class
 	for c in classes
 		if $('.classes .selected').hasClass c
 			klass = c
 
 	# set the spec
-	for specs in specs[klass]
-		if $(".specs .#{klass} .selected").hasClass specs
-			spec = specs
+	for s in specs[klass]
+		if $(".specs .#{klass} .selected").hasClass s
+			spec = s
 
 	# set the role
 	for roles in ["dps", "tank", "heal"]
 		if $(".roles .#{roles} .selected").hasClass roles
 			role = roles
 
+	# update the role count
 	updateStatsRoleCount role
 
-	# reset everything
-	resetInviter()
+	# update the dps stats
+	if role is "dps"
+		if klass in ["warrior", "paladin", "deathknight", "rogue"] or spec in ["feral", "enhancement"]
+			updateStatsDpsCount("mdps")
+		else
+		# if klass in ["warlock", "mage", "priest", "hunter"] or spec in ["balance", "elemental"]
+			updateStatsDpsCount("rdps")
+		if klass in ["paladin", "shaman", "mage", "priest", "warlock"] or spec in ["balance", "enhancement", "survival", "assassin"]
+			updateStatsDpsCount("magical")
+		else
+			updateStatsDpsCount("physical")
+
+	# 
 
 inviteHandler = ->
 	$("#ok").click (event) ->
@@ -219,6 +235,8 @@ inviteHandler = ->
 		# resetInviter()
 		invite()
 
+		# reset everything
+		resetInviter()
 
 # init
 $ ->
@@ -231,8 +249,7 @@ $ ->
 			specRolesHandler(klass, spec)
 
 	# initialize click handler for roles
-	for role in ["dps", "tank", "heal"]
-		roleHandler(role)
+	roleHandler(role) for role in ["dps", "tank", "heal"]
 
 	# initialize handler for reset button
 	resetInviterHandler()
