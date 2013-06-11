@@ -111,18 +111,18 @@
 
   specRolesHandler = function(klass, spec) {
     return $(".specs ." + klass + " ." + spec).click(function() {
-      var c, _j, _len, _ref;
+      var s, _j, _len, _ref;
       if (!$(this).hasClass('selected')) {
         $('.roles span').removeClass('selected');
         $('.info span.role').text("");
         $('#ok').hide();
       }
-      $(this).addClass('selected');
       _ref = specComplement(klass, spec);
       for (_j = 0, _len = _ref.length; _j < _len; _j++) {
-        c = _ref[_j];
-        $(".specs ." + c).removeClass('selected');
+        s = _ref[_j];
+        $(".specs ." + klass + " ." + s).removeClass('selected');
       }
+      $(this).addClass('selected');
       showRoles(klass, spec);
       return $('.info span.spec').text(spec);
     });
@@ -146,8 +146,8 @@
 
   resetInviter = function() {
     $('#ok').hide();
-    $(".roles div").hide();
-    $(".specs div").hide();
+    $(".roles div").hide().find('span').removeClass('selected');
+    $(".specs div").hide().find('span').removeClass('selected');
     $(".classes span").removeClass('selected');
     return $('span.spec, span.klass, span.role').text("");
   };
@@ -160,11 +160,16 @@
   };
 
   invite = function() {
-    var c, klass, role, roles, spec, updateStatsRoleCount, _j, _k, _l, _len, _len1, _len2, _ref, _ref1;
+    var c, klass, role, roles, s, spec, updateStatsDpsCount, updateStatsRoleCount, _j, _k, _l, _len, _len1, _len2, _ref, _ref1;
     updateStatsRoleCount = function(role) {
       var current;
       current = parseInt($(".stats .roles ." + role).text());
       return $(".stats .roles ." + role).text(current + 1);
+    };
+    updateStatsDpsCount = function(dps) {
+      var current;
+      current = parseInt($(".stats .dps ." + dps).text());
+      return $(".stats .dps ." + dps).text(current + 1);
     };
     for (_j = 0, _len = classes.length; _j < _len; _j++) {
       c = classes[_j];
@@ -174,9 +179,9 @@
     }
     _ref = specs[klass];
     for (_k = 0, _len1 = _ref.length; _k < _len1; _k++) {
-      specs = _ref[_k];
-      if ($(".specs ." + klass + " .selected").hasClass(specs)) {
-        spec = specs;
+      s = _ref[_k];
+      if ($(".specs ." + klass + " .selected").hasClass(s)) {
+        spec = s;
       }
     }
     _ref1 = ["dps", "tank", "heal"];
@@ -187,13 +192,25 @@
       }
     }
     updateStatsRoleCount(role);
-    return resetInviter();
+    if (role === "dps") {
+      if ((klass === "warrior" || klass === "paladin" || klass === "deathknight" || klass === "rogue") || (spec === "feral" || spec === "enhancement")) {
+        updateStatsDpsCount("mdps");
+      } else {
+        updateStatsDpsCount("rdps");
+      }
+      if ((klass === "paladin" || klass === "shaman" || klass === "mage" || klass === "priest" || klass === "warlock") || (spec === "balance" || spec === "enhancement" || spec === "survival" || spec === "assassin")) {
+        return updateStatsDpsCount("magical");
+      } else {
+        return updateStatsDpsCount("physical");
+      }
+    }
   };
 
   inviteHandler = function() {
     return $("#ok").click(function(event) {
       event.preventDefault();
-      return invite();
+      invite();
+      return resetInviter();
     });
   };
 
