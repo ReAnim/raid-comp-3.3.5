@@ -632,8 +632,9 @@ hr {
 }
 .group {
   width: 50px;
+  min-width: 90px;
   float: left;
-  margin: 0 35.714285714285715px 5px;
+  margin: 0 16.666666666666668px 5px;
   zoom: 1;
 }
 .group:before {
@@ -648,6 +649,9 @@ hr {
 .group .groupName {
   text-indent: 5px;
   color: #eee;
+}
+.group .groupName .reset {
+  float: right;
 }
 .frame {
   display: block;

@@ -1,7 +1,7 @@
 # raid composition for 3.3.5
 # inspired by http://raidcomp.mmo-champion.com/
 # written by Murlorc
-# version 0.09
+# version 0.093
 
 # list of all classes
 classes = ["warrior", "paladin", "deathknight",
@@ -290,6 +290,20 @@ inviteHandler = ->
 		# reset everything
 		resetInviter()
 
+groupResetHandler = (group) ->
+	$(".#{group} .groupName a.reset").click (event) ->
+
+		event.preventDefault()
+
+		for klass in classes
+			if $(".#{group} div").hasClass(klass)
+				$(".#{group} div")
+					.removeClass(klass)
+					.find('span')
+					.removeClass()
+					.addClass("frame","slot")
+					.text("")
+
 # init
 $ ->
 	# initialize click handler for classes
@@ -308,3 +322,6 @@ $ ->
 
 	# initialize handler for OK button
 	inviteHandler()
+
+	# initialize handler for resetting groups
+	groupResetHandler(group) for group in groups
