@@ -203,7 +203,7 @@
   };
 
   invite = function() {
-    var c, klass, role, roles, s, spec, updateStatsDpsCount, updateStatsRoleCount, _j, _k, _l, _len, _len1, _len2, _ref, _ref1;
+    var c, klass, role, roles, s, spec, updateClassCount, updateStatsDpsCount, updateStatsRoleCount, _j, _k, _l, _len, _len1, _len2, _ref, _ref1;
     updateStatsRoleCount = function(role) {
       var current;
       current = parseInt($(".stats .roles ." + role).text());
@@ -213,6 +213,11 @@
       var current;
       current = parseInt($(".stats .dps ." + dps).text());
       return $(".stats .dps ." + dps).text(current + 1);
+    };
+    updateClassCount = function(klass) {
+      var theCount;
+      theCount = parseInt($(".classCount p." + klass + " span").text());
+      return $(".classCount p." + klass).show().find('span').text(theCount + 1);
     };
     for (_j = 0, _len = classes.length; _j < _len; _j++) {
       c = classes[_j];
@@ -247,6 +252,7 @@
         updateStatsDpsCount("physical");
       }
     }
+    updateClassCount(klass);
     return addUnitToRaidFrame(klass, spec, role);
   };
 

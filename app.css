@@ -683,6 +683,7 @@ hr {
 .stats div {
   margin-left: 50px;
   margin-right: 10px;
+  clear: both;
 }
 .stats div p {
   clear: both;
@@ -694,4 +695,7 @@ hr {
   float: left;
   font-weight: bold;
   text-decoration: underline;
+}
+.stats .classCount p {
+  display: none;
 }

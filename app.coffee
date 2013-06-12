@@ -1,7 +1,7 @@
 # raid composition for 3.3.5
 # inspired by http://raidcomp.mmo-champion.com/
 # written by Murlorc
-# version 0.025
+# version 0.09
 
 # list of all classes
 classes = ["warrior", "paladin", "deathknight",
@@ -234,6 +234,14 @@ invite = ->
 		current = parseInt($(".stats .dps .#{dps}").text())
 		$(".stats .dps .#{dps}").text(current + 1)
 
+	updateClassCount = (klass) ->
+
+		# find out how many of this class have been invited
+		theCount = parseInt($(".classCount p.#{klass} span").text())
+		
+		# now add 1
+		$(".classCount p.#{klass}").show().find('span').text(theCount + 1)
+
 	# set the class
 	for c in classes
 		if $('.classes .selected').hasClass c
@@ -263,6 +271,9 @@ invite = ->
 			updateStatsDpsCount("magical")
 		else
 			updateStatsDpsCount("physical")
+
+	# update the class count
+	updateClassCount(klass)
 
 	# update the raid frame
 	addUnitToRaidFrame(klass, spec, role)
