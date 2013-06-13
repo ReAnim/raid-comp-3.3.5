@@ -1,7 +1,7 @@
 # raid composition for 3.3.5
 # inspired by http://raidcomp.mmo-champion.com/
 # written by Murlorc
-# version 0.093
+# version 0.094
 
 # list of all classes
 classes = ["warrior", "paladin", "deathknight",
@@ -304,6 +304,21 @@ groupResetHandler = (group) ->
 					.addClass("frame","slot")
 					.text("")
 
+raidResetHandler = ->
+	$(".stats .raidReset a.reset").click (event) ->
+
+		event.preventDefault()
+
+		for group in groups
+			for klass in classes
+				if $(".#{group} div").hasClass(klass)
+					$(".#{group} div")
+						.removeClass(klass)
+						.find('span')
+						.removeClass()
+						.addClass("frame","slot")
+						.text("")
+
 # init
 $ ->
 	# initialize click handler for classes
@@ -325,3 +340,6 @@ $ ->
 
 	# initialize handler for resetting groups
 	groupResetHandler(group) for group in groups
+
+	# initialize handler for resetting raid
+	raidResetHandler()
