@@ -700,6 +700,9 @@ hr {
   font-weight: bold;
   text-decoration: underline;
 }
+.stats .raidReset {
+  float: right;
+}
 .stats .classCount p {
   display: none;
 }
